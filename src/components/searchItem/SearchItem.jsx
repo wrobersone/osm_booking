@@ -1,7 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './searchItem.css'
+import { useNavigate } from 'react-router-dom'
 
 const SearchItem = () => {
+    const [destination, setDestination] = useState("");
+    const [openDate, setOpenDate] = useState(false);
+    const [date, setDate] = useState([
+        {
+        startDate: new Date(),
+        endDate: new Date(),
+        key: 'selection',
+        },
+    ]);
+    const [openOptions, setOpenOptions] = useState(false);
+    const [options, setOptions] = useState({
+        adult: 1,
+        children: 0,
+        room: 1, 
+    });
+
+    const navigate = useNavigate();
+    const handleSearch = () => {
+        navigate('/hotels/:id', {state: {destination, date, options}});
+    };
+
   return (
     <div className='search-item'>
         <img 
@@ -30,7 +52,7 @@ const SearchItem = () => {
             <div className="si-details-text">
                 <span className='si-price'>$123</span>
                 <span className='si-subtitle'>taxes and fees included</span>
-                <button className='si-check-btn'>See Availability</button>
+                <button className='si-check-btn' onClick={handleSearch}>See Availability</button>
             </div>
         </div>
     </div>

@@ -13,7 +13,7 @@
 
 .list-search {
     flex: 1;
-    background-color: #febb02;
+    background-color: #4fc1b1;
     padding: 10px;
     border-radius: 10px;
     position: sticky;
@@ -23,7 +23,7 @@
 
 .list-title {
     font-size: 20px;
-    color: gray;
+    color: white;
     margin-bottom: 10px;
 }
 
@@ -65,13 +65,13 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
-    color: gray;
+    color: white;
     font-size: 12px;
 }
 
 .list-search > button {
     padding: 10px;
-    background-color: navy;
+    background-color: #ed9d62;
     color: white;
     border: none;
     width: 100%;

@@ -15,8 +15,8 @@ const Header = ({ type }) => {
     {
       startDate: new Date(),
       endDate: new Date(),
-      key: 'selection'
-    }
+      key: 'selection',
+    },
   ]);
   const [openOptions, setOpenOptions] = useState(false);
   const [options, setOptions] = useState({
@@ -25,19 +25,19 @@ const Header = ({ type }) => {
     room: 1, 
   });
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleOption = (name, operation) => {
     setOptions(prev => {
       return {
         ...prev, [name]: operation === 'i' ? options[name] + 1 : options[name] - 1,
-      }
-    })
-  }
+      };
+    });
+  };
 
   const handleSearch = () => {
     navigate('/hotels', {state: {destination, date, options}});
-  }
+  };
 
   return (
     <div className='header'>
@@ -45,7 +45,7 @@ const Header = ({ type }) => {
         <div className="header-list">
           <div className="header-item active">
             <FontAwesomeIcon icon={faBed} />
-            <span> Stays</span>
+            <span> Hotels</span>
           </div>
           <div className="header-item">
             <FontAwesomeIcon icon={faCar} />
@@ -148,7 +148,7 @@ const Header = ({ type }) => {
         </div></>)}
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default Header
